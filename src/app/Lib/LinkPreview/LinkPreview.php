@@ -3,7 +3,7 @@ namespace App\Lib\LinkPreview;
 
 use Dusterio\LinkPreview\Client;
 
-final class LinkPreview
+final class LinkPreview implements LInkPreviewInterface
 {
     public function get(string $url): GetLinkPreviewResponse
     {
