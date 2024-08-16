@@ -13,7 +13,7 @@ final class CreateBookmarkUseCase
 {
     private LinkPreviewInterface $linkPreview;
 
-    public function __construce(LinkPreviewInterface $linkPreview)
+    public function __construct(LinkPreviewInterface $linkPreview)
     {
         $this->linkPreview = $linkPreview;
     }
