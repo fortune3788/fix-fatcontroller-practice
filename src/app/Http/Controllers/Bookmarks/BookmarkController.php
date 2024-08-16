@@ -126,11 +126,11 @@ class BookmarkController extends Controller
      * URLが存在しないなどの理由で失敗したらバリデーションエラー扱いにする
      *
      * @param Request $request
+     * @param CreateBookmarkUseCase $useCase 
      * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function create(CreateBookmarkRequest $request)
+    public function create(CreateBookmarkRequest $request, CreateBookmarkUseCase $useCase)
     {
-        $useCase = new CreateBookmarkUseCase(new MockLinkPreview());
         $useCase->handle($request->url, $request->category, $request->comment);
 
         // 暫定的に成功時は一覧ページへ
